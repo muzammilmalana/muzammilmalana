@@ -1,0 +1,670 @@
+:root {
+  --border-radius: 130px;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: displayBold;
+  src: url("./otterco_fonts/OttercoDisplay-Medium.otf");
+}
+@font-face {
+  font-family: displayLight;
+  src: url("./otterco_fonts/OttercoDisplay-Light.otf");
+}
+
+body {
+  background-color: #eeedec;
+  margin: 0px;
+}
+
+/* MARK:Header
+ */
+
+.header {
+  height: 10vh;
+  padding: 10px 20px;
+  /* position: fixed; */
+  /* top: 0; */
+  /* left: 0; */
+  /* right: 0; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.default-header {
+  display: flex;
+}
+
+.mobile-header {
+  display: none;
+}
+
+/* Left */
+.headerButtons {
+  font-family: displayLight;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1rem;
+  gap: 10px;
+}
+
+.headerButtons a {
+  text-decoration: none;
+}
+
+.headerButtons a :hover {
+  text-decoration: underline;
+}
+
+.linkButton {
+  background-color: white;
+  width: 100px;
+  padding: 10px;
+  border-radius: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.linkButtonMobile {
+  background-color: white;
+  width: 100px;
+  padding: 10px;
+  border-radius: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Right */
+.headerLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.headerLinks a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  font-family: displayLight;
+  font-size: 1rem;
+}
+
+.headerLinks a:hover {
+  text-decoration: underline;
+}
+
+/* MARK:Hero Page
+ */
+.heroPage {
+  background-color: #f9f9f9;
+}
+
+.heroContainer {
+  background-color: #eeedec;
+  height: 90vh;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #ecebea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.img {
+  height: 18%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  margin-bottom: -20px;
+}
+
+.nameTag {
+  background-color: white;
+  position: relative;
+  right: -125px;
+  top: -70px;
+  font-family: displayLight;
+  padding: 0px 20px;
+  border-radius: 50px;
+  width: fit-content;
+  z-index: 10;
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(-10deg); /* Start at the original position */
+  }
+  50% {
+    transform: translateY(-40px) rotate(-10deg); /* Float up by 20px */
+  }
+  100% {
+    transform: translateY(0) rotate(-10deg); /* Return to the original position */
+  }
+}
+
+.titleText {
+  font-family: displayBold;
+  font-size: 3.5rem;
+  color: black;
+  margin: -10px 0px;
+}
+.latestButton {
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 50px;
+  border-radius: 100px;
+  margin-top: 20px;
+  gap: 5px;
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
+.latestButton p {
+  color: white;
+  font-family: displayLight;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.latestButton:hover p {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+.arrowIcon {
+  height: 20px;
+  width: 20px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  animation: fadeIn 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  transform-origin: top; /* Pivot point for hanging effect */
+  transform: translateY(-100vh) rotate(30deg); /* Start off-screen with a slight tilt */
+  animation: hangAndDrop 1.2s ease forwards; /* Hanging drop animation */
+}
+.whoami {
+  font-family: displayBold;
+  font-size: 2rem;
+}
+.description {
+  font-family: displayLight;
+  font-size: 1.2rem;
+}
+.close {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.close:hover,
+.close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hangAndDrop {
+  0% {
+    transform: translateY(-100vh) rotate(30deg); /* Hanging at an angle */
+  }
+  40% {
+    transform: translateY(0) rotate(0); /* Drop down but still swinging */
+  }
+  60% {
+    transform: translateY(-20px) rotate(-5deg); /* Bounce upward slightly */
+  }
+  80% {
+    transform: translateY(10px) rotate(3deg); /* Slight bounce downward */
+  }
+  100% {
+    transform: translateY(0) rotate(0); /* Rest in the final center position */
+  }
+}
+
+#aboutModal:target {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* MARK:Tech Bar
+ */
+.techStacks {
+  background-color: #f9f9f9;
+  height: 40vh;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  border-width: 2px;
+  border-top-width: 0px;
+  border-style: solid;
+  border-color: #ecebea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: nowrap;
+}
+.logo {
+  height: 100px;
+  width: 100px;
+}
+/* MARK:Projects
+ */
+.projects {
+  background-color: #eeedec;
+  height: 120vh;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #ecebea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projectsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.projectsHeader {
+  font-family: displayBold;
+  font-size: 3rem;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.titleArrow {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
+.titleArrow p {
+  text-decoration: none;
+
+  color: white;
+  font-size: 1.5rem;
+  font-family: displayBold;
+}
+
+.titleArrow:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+.projectCard {
+  background-color: #36454f;
+  max-width: 50%;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.projectdesc,
+.titleArrow p {
+  color: #ffffff;
+}
+
+.arrowIcon {
+  width: 20px;
+}
+
+.projectdesc {
+  font-size: 1rem;
+  color: white;
+  font-family: displayLight;
+}
+
+/* MARK:Contact 
+ */
+.contact {
+  background-color: #f9f9f9;
+  height: 95vh;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #ecebea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactTitle {
+  font-family: displayBold;
+  font-size: 4rem;
+  margin: -10px 0px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.contactButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  align-self: center;
+}
+
+.contactButtons {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 50px;
+  border-radius: 100px;
+  margin-top: 20px;
+  width: fit-content;
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+.contactButtons p {
+  text-decoration: none;
+  color: white;
+  font-family: displayBold;
+  font-size: 1rem;
+}
+
+.contactButtons:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+.contactButtonsWhite {
+  background-color: white;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 50px;
+  border-radius: 100px;
+  margin-top: 20px;
+  border: 5px solid #f1f0ef;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+.contactButtonsWhite p {
+  text-decoration: none;
+  color: black;
+  font-family: displayBold;
+  font-size: 1rem;
+}
+
+.contactButtonsWhite:hover {
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
+/* Email Button Styling */
+.email-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Modal Container */
+.emailFormContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Close Button */
+.emailClose {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.emailClose:hover,
+.emailClose:focus {
+  color: black;
+  cursor: pointer;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Center items */
+  justify-content: center;
+  padding: 20px; /* Add padding for better spacing */
+  width: 100%; /* Use full width */
+  margin-left: -20px;
+}
+
+.label {
+  font-family: displayLight;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%; /* Full width */
+  padding: 10px; /* Add padding */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Light border */
+  margin-bottom: 10px; /* Space between inputs */
+  font-size: 1rem; /* Adjust font size */
+  font-family: displayLight;
+}
+
+textarea[id="message"] {
+  width: 100%; /* Full width */
+  padding: 10px; /* Add padding */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Light border */
+  margin-bottom: 10px; /* Space between inputs */
+  font-size: 1rem; /* Adjust font size */
+  font-family: displayLight;
+}
+
+/* MARK:Footer 
+*/
+
+.footer {
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -20px;
+}
+.footerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90vw;
+}
+.footerContainer p {
+  font-family: displayLight;
+  font-size: 1rem;
+}
+
+.footerDivider {
+  height: 1px;
+  background-color: rgb(140, 140, 140);
+  width: 90vw;
+}
+
+/* MARK:Media Queries
+ */
+@media only screen and (max-width: 800px) {
+  /* Tablet */
+  :root {
+    --border-radius: 100px;
+  }
+  .headerbuttons {
+    font-size: 1.4rem;
+  }
+  .headerLinks a {
+    font-size: 1.4rem;
+  }
+  .mobile-header {
+    display: flex;
+  }
+  .default-header {
+    display: none;
+  }
+  .titleText {
+    font-size: 2.5rem;
+  }
+  .heroContainer {
+    height: 70vh;
+  }
+  .logo {
+    flex-basis: calc(20% - 10px);
+    height: 80px;
+    width: 80px;
+  }
+
+  .techStacks {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+  }
+
+  .contact {
+    height: 75vh;
+  }
+  .nameTag {
+    right: -110px;
+    top: -65px;
+  }
+  .contactTitle {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* Mobile */
+  :root {
+    --border-radius: 80px;
+  }
+  .headerbuttons {
+    font-size: 0.8rem;
+  }
+  .headerLinks a {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+  .mobile-header {
+    display: flex;
+  }
+  .default-header {
+    display: none;
+  }
+  .linkButtonMobile {
+    width: 50px;
+  }
+  .titleText {
+    font-size: 2.2rem;
+  }
+  .heroContainer {
+    height: 85vh;
+  }
+  .logo {
+    height: 50px;
+    width: 50px;
+  }
+  .techStacks {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .contact {
+    height: 85vh;
+  }
+
+  .nameTag {
+    right: -100px;
+    top: -50px;
+  }
+  .nameTag p {
+    font-size: 0.8rem;
+  }
+  .contactTitle {
+    font-size: 2rem;
+  }
+
+  .contactButtons {
+    padding: 0px 30px;
+  }
+  .contactButtons p {
+    font-size: 0.8rem;
+  }
+
+  .contactButtonsWhite {
+    padding: 0px 30px;
+  }
+  .contactButtonsWhite p {
+    font-size: 0.8rem;
+  }
+
+  .projects {
+    height: 160vh;
+  }
+  .projectCard {
+    max-width: 70%;
+  }
+}

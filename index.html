@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muzammil's Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- MARK:Header
+      -->
+
+    <header class="header default-header">
+      <div class="headerButtons">
+        <p>muzammilmalana01@gmail.com</p>
+        <a href="mailto:muzammilmalana01@gmail.com" target="_blank"
+          ><div
+            class="linkButton"
+            style="background-color: black; color: white"
+          >
+            copy mail!
+          </div></a
+        >
+        <a
+          href="https://github.com/muzammilmalana"
+          target="_blank"
+          style="color: black"
+        >
+          <div class="linkButton">github</div></a
+        >
+      </div>
+      <div class="headerLinks">
+        <a href="#techStacks">Tech Stacks</a>
+        /
+        <a href="#projects">Projects</a>
+        /
+        <a href="#contact">Contact</a>
+      </div>
+    </header>
+    <!-- 
+     -->
+    <header class="header mobile-header">
+      <div class="headerButtons">
+        <a href=""
+          ><div
+            class="linkButtonMobile"
+            style="background-color: black; color: white"
+          >
+            mail!
+          </div></a
+        >
+        <a href=""> <div class="linkButtonMobile">github</div></a>
+      </div>
+      <div class="headerLinks">
+        <a href="#techStacks">Tech Stacks</a>
+        /
+        <a href="#projects">Projects</a>
+        /
+        <a href="#contact">Contact</a>
+      </div>
+    </header>
+    <!--  -->
+    <main>
+      <!-- MARK:Hero Page
+        -->
+      <section class="heroPage" id="heroPage">
+        <div class="heroContainer">
+          <img class="img" src="./assets/muzammil.jpg" alt="muzammil" />
+          <div class="nameTag"><p>Muzammil Sheraz 👋🏼</p></div>
+          <span class="titleText">Building mobile</span>
+          <span class="titleText">applications , brands</span>
+          <span class="titleText">and experience.</span>
+          <a href="#aboutModal">
+            <div class="latestButton">
+              <p>about me</p>
+              <img class="arrowIcon" src="./assets/arrow.png" alt="arrow" />
+            </div>
+          </a>
+          <div id="aboutModal" class="modal">
+            <div class="modal-content">
+              <a href="#" class="close">&times;</a>
+              <p class="whoami">Who am I?</p>
+              <p class="description">
+                Hi, I’m Muzammil, a React Native developer who loves crafting
+                smooth and intuitive mobile apps. Whether it’s building clean,
+                responsive UIs or integrating the latest tools and tech, I’m all
+                about turning ideas into interactive digital experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MARK:techStacks
+        -->
+      <section class="techStacks" id="techStacks">
+        <img src="./assets/html.svg" alt="html" class="logo" />
+        <img src="./assets/css.svg" alt="css" class="logo" />
+        <img src="./assets/js.svg" alt="js" class="logo" />
+        <img src="./assets/figma.svg" alt="figma" class="logo" />
+        <img src="./assets/react.svg" alt="react" class="logo" />
+        <img src="./assets/node.svg" alt="node" class="logo" />
+        <img src="./assets/express.svg" alt="express" class="logo" />
+        <img src="./assets/mongo.svg" alt="mongo" class="logo" />
+      </section>
+
+      <!-- MARK:Projects
+        -->
+      <section class="projects" id="projects">
+        <div class="projectsContainer">
+          <p class="projectsHeader">Recent Work</p>
+
+          <div class="projectCard">
+            <a
+              href="https://apps.apple.com/us/app/trading-post-cannabis-co/id6477382940"
+              target="_blank"
+            >
+              <div class="titleArrow">
+                <p>Trading Post</p>
+                <img src="./assets/arrow.png" alt="arrow" class="arrowIcon" />
+              </div>
+            </a>
+            <p class="projectdesc">
+              A cutting-edge eCommerce app developed with React Native,
+              featuring a robust MongoDB backend. Leveraging Node.js and
+              Express, this platform efficiently manages all business logic,
+              while Firebase ensures seamless user authentication and
+              authorization.
+            </p>
+          </div>
+
+          <div class="projectCard">
+            <a
+              href="https://apps.apple.com/us/app/budology/id6450515258"
+              target="_blank"
+            >
+              <div class="titleArrow">
+                <p>Budology</p>
+                <img src="./assets/arrow.png" alt="arrow" class="arrowIcon" />
+              </div>
+            </a>
+            <p class="projectdesc">
+              Budology is an innovative application designed for cannabis
+              enthusiasts. This app simplifies product discovery with
+              user-friendly interfaces and real-time updates, ensuring users
+              stay informed about the latest trends and deals in the cannabis
+              market.
+            </p>
+          </div>
+
+          <div class="projectCard">
+            <a
+              href="https://apps.apple.com/us/app/viva-deals/id6470205705"
+              target="_blank"
+            >
+              <div class="titleArrow">
+                <p>Viva Deals</p>
+                <img src="./assets/arrow.png" alt="arrow" class="arrowIcon" />
+              </div>
+            </a>
+            <p class="projectdesc">
+              Experience the thrill of savings with Viva Deals, a dynamic app
+              designed to help users discover unbeatable offers and promotions.
+              Built with React Native, it features real-time notifications and
+              personalized recommendations, making it easier than ever to score
+              great deals.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MARK:Contact
+        -->
+      <section class="contact" id="contact">
+        <div class="contactContainer">
+          <div>
+            <p class="contactTitle">Tell me about your</p>
+            <p class="contactTitle">next project!</p>
+          </div>
+
+          <div class="emailFormContent">
+            <form class="formContainer">
+              <label for="name" class="label">Name:</label>
+              <input type="text" id="name" name="name" required />
+              <label for="email" class="label">Email:</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="message" class="label">Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                cols="40"
+                required
+              ></textarea>
+
+              <div class="contactButtonsContainer">
+                <a href="mailto:muzammilmalana01@gmail.com" target="_blank">
+                  <div class="contactButtons">
+                    <p>Email Me</p>
+                  </div>
+                </a>
+                <a href="https://wa.me/+923251860087" target="_blank">
+                  <div class="contactButtonsWhite">
+                    <p>Whatsapp</p>
+                  </div>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- MARK:Footer
+       -->
+      <footer class="footer">
+        <hr class="footerDivider" />
+        <div class="footerContainer">
+          <p>© 2024 All rights reserved.</p>
+          <div class="headerLinks">
+            <a href="#techStacks">Tech Stacks</a>
+            /
+            <a href="#projects">Projects</a>
+            /
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </footer>
+
+      <!--  -->
+    </main>
+  </body>
+</html>
